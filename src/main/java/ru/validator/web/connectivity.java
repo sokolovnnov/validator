@@ -1,4 +1,4 @@
-package web;
+package ru.validator.web;
 
 import java.io.IOException;
 
