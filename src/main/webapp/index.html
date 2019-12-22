@@ -20,13 +20,12 @@
 <a href="connectivity.jsp">Connectivity test</a>
 <div id="map"></div>
 <script>
-    var map = L.map('map').setView([45, 45], 7);
+    var map = L.map('map').setView([45, 45], 13);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 
     var latlngs = [
-        [45.51, -122.68],
-        [37.77, -122.43],
-        [34.04, -118.2]
+        [56.2359333, 44.0616644],
+        [56.2360274, 44.0615783]
     ];
     var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
     // zoom the map to the polyline
