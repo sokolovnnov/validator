@@ -7,13 +7,15 @@ import ru.validator.repository.WayRepository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 @Repository
 public class InMemoryWayRepository implements WayRepository {
 
-    ArrayList<Way> ways = new ArrayList<>();
+
+    private Double[] latlon = new Double[]{56.2360274, 44.0615783};
+
+    private ArrayList<Way> ways = new ArrayList<>();
     {
         ways.add(new Way(1L, Arrays.asList(
                 new Node(1709076197L, 562360274L, 440615783L),
@@ -42,6 +44,10 @@ public class InMemoryWayRepository implements WayRepository {
         )));
     }
 
+
+    public Double getLat(){return latlon[0];}
+
+    public Double getLon(){return latlon[1];}
 
     @Override
     public List<Way> getAll() {

@@ -7,11 +7,11 @@
     <display-name>Connectivity validator</display-name>
 
     <servlet>
-        <servlet-name>connectivity</servlet-name>
-        <servlet-class>web.connectivity</servlet-class>
+        <servlet-name>WayServlet</servlet-name>
+        <servlet-class>ru.validator.web.WayServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>connectivity</servlet-name>
+        <servlet-name>WayServlet</servlet-name>
         <url-pattern>/connectivity</url-pattern>
     </servlet-mapping>
 </web-app>

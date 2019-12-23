@@ -10,10 +10,21 @@ import java.util.List;
 @Controller
 public class WayController {
 
-    @Autowired
-    private WayServise wayService;
+    private final WayServise wayService;
 
-    List<Way> getAll(){
+    @Autowired
+    private WayController(WayServise wayServise) {
+        this.wayService = wayServise;
+    }
+
+
+
+    public List<Way> getAll(){
         return wayService.getAll();
     }
+
+    public Double getLat(){return wayService.getLat();}
+
+    public Double getLon(){return wayService.getLon();}
+
 }

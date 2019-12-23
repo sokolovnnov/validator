@@ -3,7 +3,7 @@ package ru.validator.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.validator.model.Way;
-import ru.validator.repository.WayRepository;
+import ru.validator.repository.inmemory.InMemoryWayRepository;
 
 import java.util.List;
 
@@ -11,8 +11,15 @@ import java.util.List;
 public class WayServise {
 
     @Autowired
-    private WayRepository wayRepository;
+    private InMemoryWayRepository inMemWayRepository;
+
     public List<Way> getAll(){
-        return wayRepository.getAll();
+        return inMemWayRepository.getAll();
     }
+
+    public Double getLat(){return inMemWayRepository.getLat();}
+
+    public Double getLon(){return inMemWayRepository.getLon();}
+
+
 }
