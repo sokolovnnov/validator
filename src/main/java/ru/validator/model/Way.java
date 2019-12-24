@@ -8,8 +8,18 @@ public class Way {
     Long wayId;
     List<Node> nodes;
 
+
+
     public Way(Long wayId, List<Node> nodes) {
         this.wayId = wayId;
         this.nodes = nodes;
+    }
+
+    public List<Node> getNodes() {
+        return nodes;
+    }
+
+    public Long getWayId() {
+        return wayId;
     }
 }

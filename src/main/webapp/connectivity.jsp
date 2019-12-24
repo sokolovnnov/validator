@@ -24,20 +24,30 @@
 <input type="hidden" name="lat123">
 <input type="hidden" name="lon123">
 <script>
-    var mymap = L.map('mapid').setView([45, 45], 13);
+     var mymap = L.map('mapid').setView([45, 45], 13);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(mymap);
 
     var latlngs = [
-         [56.2359333, 44.0616644],
-         [56.2360274, 44.0615783]
-     ];
-     var polyline = L.polyline(latlngs, {color: 'red'}).addTo(mymap);
-     mymap.fitBounds(polyline.getBounds());
+        [56.2359333, 44.0616644],
+        [56.2360274, 44.0615783]
+    ];
+     // document.write(latlngs+ "<br>");
+    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(mymap);
+    mymap.fitBounds(polyline.getBounds());
 
     L.marker([56.2359333, 44.0616644]).addTo(mymap);
-    L.marker([56.2359333, 44.0616644]).addTo(mymap);
-    L.circle([${lat123}, ${lon123}], {radius: 100, color:"blue"}).addTo(mymap);
+    L.circle([${lat123}, ${lon123}], {radius: 100, color: "blue"}).addTo(mymap);
 
+    <c:forEach items="${ways}" var="w">
+    <%--var latl = ${w.wayId};--%>
+    var a = [];
+        <c:forEach items="${w.nodes}" var = "n">
+            a.push([${n.lat}, ${n.lon}]);
+        </c:forEach>
+    var polyline1 = L.polyline(a, {color: 'red'}).addTo(mymap);
+    // alert(a);
+    // document.write(a+ "<br>");
+    </c:forEach>
 
 </script>
 </body>
